@@ -1,0 +1,25 @@
+<div id="userDetail">
+    <div><img ng-src="{{user.avatar_url}}" height="100px"></div>
+    <h4>{{user.name}}</h4>
+    <select ng-model="sortOrder">
+      <option value='+name'>Name</option>
+      <option value='-stargazers_count'>Star</option>
+      <option value='+language'>Language</option>
+    </select>
+    <input type="text" ng-model="searchTerm" placeholder="type to search here..." />
+    <br/>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Star</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      <tr ng-repeat="repo in repos |  filter:searchTerm | orderBy:sortOrder">
+        <td>{{repo.name}}</td>
+        <td>{{repo.stargazers_count | number}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </table>
+    </div>

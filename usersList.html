@@ -1,0 +1,9 @@
+<div id="userList">
+     <table width="60%" border="1"> 
+         <tr ng-repeat="u in users | filter:SearchUser">
+             <td>{{u.id}}</td>
+             <td><a href="#" ng-click="GetDetail(u.login)"><img ng-src="{{u.avatar_url}}" height="25" width="25"/></a></td>
+             <td>{{u.login}}</td>
+         </tr>
+     </table>
+</div>
